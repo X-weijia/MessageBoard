@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 500px;
+        height: auto;
+        border: 1px solid red;
+        margin: 30px auto 0;
+    }
+    .box1{
+        width: 500px;
+        height: 200px;
+        border: 1px solid red;
+        border-top: none;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .text{
+        display: block;
+        width: 460px;
+        height: 120px;
+        border: 1px solid red;
+        resize: none;
+        margin: 5px auto;
+        outline: none;
+        padding-left: 20px;
+    }
+    button{
+        display: block;
+        width: 150px;
+        height: 40px;
+        background: rgba(255, 0, 0, 0.5);
+        margin: 10px auto 0;
+        outline: none;
+        font-size: 24px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 20px 1px rgba(255, 0, 0, 0.5);
+        border-radius: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3 style="text-align:center;font-size: 30px;">留言板</h3>
+        <hr>
+    </div>
+    <div class="box1">
+        <textarea class="text" cols="30" rows="10" placeholder="请留言......"></textarea>
+        <button>提交</button>
+    </div>
+</body>
+<script>
+    let box = document.querySelector(".box");
+    let box1 = document.querySelector(".box1");
+    let btn = document.querySelector("button");
+    
+
+    btn.onclick = function () {
+            let ta = document.querySelector(".text");
+            let box2 = document.createElement("div");
+            box2.style = `width:400px;height:30px;border-bottom:1px solid red;margin:10px auto 5px;font-size:14px;`;
+            box2.innerText = ta.value;
+            // console.log(text);
+            box.appendChild(box2);
+            ta.value = ""
+    }
+    
+
+
+
+</script>
+</html>
